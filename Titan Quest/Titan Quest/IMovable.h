@@ -1,12 +1,11 @@
 #pragma once
-
-enum Direction { Up, Down, Left, Right };
+#include "Enums.h"
 
 class IMovable
 {
-
+	int ab;
 public:
-	IMovable();
-	~IMovable();
+	//IMovable();
+	//~IMovable();
 };
 

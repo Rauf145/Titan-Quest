@@ -1,15 +1,16 @@
 #pragma once
+#include "Enums.h"
+#include <iostream>
+#include <string>
 
-enum State { Idle, Attack, Defend, Shoot, Dead };
-enum MapCell { Empty, Wall, Hole };
-struct Position { int x, y; };
-struct Damage { int min, max; };
+using namespace std;
 
 class GameObject
 {
 	Position position;
 public:
 	GameObject(int x, int y);
+	GameObject() {};
 	Position getPosition();
 	void setPosition(int x, int y);
 };

@@ -2,11 +2,11 @@
 
 
 
-IMovable::IMovable()
-{
-}
-
-
-IMovable::~IMovable()
-{
-}
+//IMovable::IMovable()
+//{
+//}
+//
+//
+//IMovable::~IMovable()
+//{
+//}

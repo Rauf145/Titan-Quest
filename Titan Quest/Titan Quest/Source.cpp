@@ -1,6 +1,8 @@
-//#include <iostream>
-//#include <string>
-//#include <vector>
+#include <iostream>
+#include <string>
+#include <vector>
+#include "Map.h"
+#include "Player.h"
 //using namespace std;
 //
 //enum Direction { Up, Down, Left, Right };
@@ -108,17 +110,26 @@
 //	vector<Enemy> enemies;
 //};
 //
-//void main()
-//{
-//	//Game initialization
-//
-//	//Game loop
-//	while (true)
-//	{
-//		//Input handling
-//
-//		//Game logic
-//
-//		//Drawing
-//	}
-//}
+void main()
+{
+	//Game initialization
+	Player player();
+	Map::get();
+	for (int i = 0; i < Map::get().height; i++)
+	{		
+		for (int j = 0; j < Map::get().width; j++)
+		{
+			cout << Map::get().getCell(i, j);
+		}
+		cout << endl;
+	}
+	//Game loop
+	//while (true)
+	//{
+		//Input handling
+
+		//Game logic
+
+		//Drawing
+	//}
+}

@@ -156,6 +156,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Enums.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="IAttacking.h" />
