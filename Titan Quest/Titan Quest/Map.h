@@ -35,10 +35,10 @@ public:
 		static Map INSTANCE;
 		return INSTANCE;
 	}
-	MapCell getCell(int x, int y)
+	MapCell getCell(int y, int x)
 	{
-		if (x >= 0 && x < height && y >= 0 && y < width)
-			return field[x][y];
+		if (y >= 0 && y < height && x >= 0 && x < width)
+			return field[y][x];
 		else
 			return MapCell::Wall;
 	}

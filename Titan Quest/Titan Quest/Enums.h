@@ -1,5 +1,5 @@
 #pragma once
-enum Direction { Up, Down, Left, Right };
+enum Direction { Up = 'w', Down = 's', Left = 'a', Right = 'd' };
 enum State { Idle, Attack, Defend, Shoot, Dead };
 enum MapCell { Empty, Wall, Hole };
 struct Position { int x, y; };

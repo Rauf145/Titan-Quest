@@ -3,8 +3,9 @@
 
 class IMovable
 {
-	int ab;
+	Direction direction;
 public:
+	virtual void move(Direction dir) = 0;
 	//IMovable();
 	//~IMovable();
 };

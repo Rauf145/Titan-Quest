@@ -1,9 +1,11 @@
 #pragma once
 #include "Character.h"
 #include "Map.h"
+#include <Windows.h>
 
 class Player : public Character
 {
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	string Name;
 	int MP;
 	int level;
@@ -24,7 +26,17 @@ public:
 		level = 0;
 		exp = 0;
 	}
-	string const getName();
+	//string const getName();
+	//void AttackCh(Character &ch)
+	//{
+	//	cout << endl;
+	//}
+
+	// Inherited via Character
+	void move(Direction dir) override;
+
+	// Inherited via Character
+	void AttackCh(Character & ch) override;
 	//void setName(string Name);
 };
 
