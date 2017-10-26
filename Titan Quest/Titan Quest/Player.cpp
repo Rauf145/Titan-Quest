@@ -17,5 +17,22 @@ void Player::move(Direction dir)
 
 void Player::AttackCh(Character & ch)
 {
-	cout << endl;
+	int Left;
+	int Right;
+	int Up;
+	int Down;
+	position.y + 1 <= 39 ? Down = position.y + 1 : Down = position.y;
+	position.y - 1 >= 0 ? Up = position.y - 1 : Up = position.y;
+	position.x + 1 <= 39 ? Right = position.x + 1 : Right = position.x;
+	position.x - 1 >= 0 ? Left = position.x - 1 : Left = position.x;
+	//for (int i = Up; i <= Down; i++)
+	//{
+	//	for (int j = Left; j < Right; j++)
+	//	{
+	//		if ()
+	//		{
+
+	//		}
+	//	}
+	//}
 }

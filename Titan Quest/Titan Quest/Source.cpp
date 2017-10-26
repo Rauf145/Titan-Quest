@@ -5,6 +5,7 @@
 #include "Player.h"
 #include <conio.h>
 #include <Windows.h>
+#include "Game.h"
 
 //using namespace std;
 //
@@ -115,35 +116,15 @@
 //
 void main()
 {
-	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	//Game initialization
+	Game::get().DrawField();
 	int button;
-	Player player;
-	Map::get();
-	for (int i = 0; i < Map::get().height; i++)
-	{		
-		for (int j = 0; j < Map::get().width; j++)
-		{
-			if (i == player.getPosition().y && j == player.getPosition().x)
-			{
-				cout << "@";
-			}
-			else if (Map::get().getCell(i, j) == Wall)
-			{
-				cout << char(219);
-			}
-			else
-				cout << " ";
-				//cout << Map::get().getCell(i, j);
-		}
-		cout << endl;
-	}
 	while (true)
 	{
-		SetConsoleCursorPosition(h, {(short) player.getPosition().x, (short)player.getPosition().y + 1});
-		cout << "@";
+		Game::get().DrawPlayer();
 		button = getch();
-		player.move(Direction(button));
+		Game::get().getPlayer()->move(Direction(button));
+		//player.move(Direction(button));
 	}
 	//Game loop
 	//while (true)

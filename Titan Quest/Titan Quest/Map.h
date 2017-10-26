@@ -7,7 +7,6 @@ using namespace std;
 class Map
 {
 	vector<vector<MapCell>> field;
-
 	Map(int width = 40, int height = 40) : width(width), height(height)
 	{
 		field.resize(height);
