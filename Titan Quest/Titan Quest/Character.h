@@ -6,7 +6,7 @@
 
 class Character : public GameObject, public IMovable, public IAttacking
 {
-	protected:
+protected:
 	int HP;
 	int STATE;
 public:

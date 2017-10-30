@@ -16,15 +16,18 @@ public:
 	{
 		position.x = rand() % 40;
 		position.y = rand() % 40;
-		while (Map::get().getCell(position.x,position.y) != Empty)
+		while (Map::get().getCell(position.x,position.y) != Empty) //
 		{
-			position.x = rand() % 40;
-			position.y = rand() % 40;
-		}
+			position.x = rand() % 40;//
+			position.y = rand() % 40;//
+		}//
+		HP = 100;
+		STATE = Idle;
 		cin >> Name;
 		MP = 100;
 		level = 0;
 		exp = 0;
+		cooldown = 2;
 	}
 	//string const getName();
 	//void AttackCh(Character &ch)
