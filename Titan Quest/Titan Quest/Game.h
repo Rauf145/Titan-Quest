@@ -16,9 +16,9 @@ class Game
 		for (int i = 0; i < 20; i++)
 		{
 			Damage dm;//	 Temperary
+			Position pos;//	 Temperary
 			dm.max = 20;//
 			dm.min = 5;//
-			Position pos;//	 Temperary
 			pos = checkAndRand();
 			EnemyType = new Zombie(dm, pos, 100, 3);
 			enemies.push_back(EnemyType);
