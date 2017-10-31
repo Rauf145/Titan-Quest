@@ -6,6 +6,7 @@
 #include <conio.h>
 #include <Windows.h>
 #include "Game.h"
+#include <thread>
 
 //using namespace std;
 //
@@ -117,14 +118,20 @@
 void main()
 {
 	//Game initialization
+	srand(time(0));
 	Game::get().DrawField();
 	int button;
 	while (true)
 	{
 		Game::get().DrawPlayer();
 		Game::get().DrawEnemies();
-		button = getch();
-		Game::get().getPlayer()->move(Direction(button));
+		if (kbhit())
+		{
+			button = getch();
+			Game::get().getPlayer()->move(Direction(button));
+		}
+		Sleep(100);
+		Game::get().EnemyMove();
 		//player.move(Direction(button));
 	}
 	//Game loop

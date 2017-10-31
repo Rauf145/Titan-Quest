@@ -36,3 +36,4 @@ void Player::AttackCh(Character & ch)
 	//	}
 	//}
 }
+

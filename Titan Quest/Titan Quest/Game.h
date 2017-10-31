@@ -13,7 +13,7 @@ class Game
 		Enemy *EnemyType;
 		Map::get();
 		player = new Player;
-		for (int i = 0; i < 20; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			Damage dm;//	 Temperary
 			Position pos;//	 Temperary
@@ -31,6 +31,7 @@ public:
 	void DrawField();
 	void DrawPlayer();
 	void DrawEnemies();
+	void EnemyMove();
 	Player* getPlayer();
 };
 

@@ -61,12 +61,32 @@ void Game::DrawPlayer()
 
 void Game::DrawEnemies()
 {
+	int Dir;
 	for (int i = 0; i < enemies.size(); i++)
 	{
 		SetConsoleCursorPosition(h, {(short)enemies[i]->getPosition().x, (short)enemies[i]->getPosition().y + 1 });
 		cout << "*";
 	}
 
+}
+
+void Game::EnemyMove()
+{
+	int randDir;
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		SetConsoleCursorPosition(h, { (short)enemies[i]->getPosition().x, (short)enemies[i]->getPosition().y + 1 }); //
+		cout << " "; //
+		randDir = rand() % 4;
+		if (randDir == 0)
+			enemies[i]->move(Up);
+		else if (randDir == 1)
+			enemies[i]->move(Down);
+		else if (randDir == 2)
+			enemies[i]->move(Left);
+		else
+			enemies[i]->move(Right);
+	}
 }
 
 Player* Game::getPlayer()

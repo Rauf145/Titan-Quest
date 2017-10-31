@@ -2,6 +2,7 @@
 
 void Zombie::move(Direction dir)
 {
+
 	if (dir == Up && position.y > 0 && Map::get().getCell(position.y - 1, position.x) == Empty)
 		position.y--;
 	else if (dir == Down && position.y < 39 && Map::get().getCell(position.y + 1, position.x) == Empty)
@@ -16,6 +17,8 @@ void Zombie::AttackCh(Character & ch)
 {
 	int randDamage = 0;
 	randDamage = rand() % (damage.max - damage.min) + damage.min;
+	if (ch.getHP() < randDamage)
+		randDamage = ch.getHP();
 	ch.setHP(ch.getHP() - randDamage);
 	//int left;
 	//int right;
