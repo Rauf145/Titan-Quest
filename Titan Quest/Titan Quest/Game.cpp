@@ -57,6 +57,10 @@ void Game::DrawPlayer()
 {
 	SetConsoleCursorPosition(h, { (short)player->getPosition().x, (short)player->getPosition().y + 1 });
 	cout << "@";
+	SetConsoleCursorPosition(h, { (short) 0, (short)41});
+	cout << "   ";
+	SetConsoleCursorPosition(h, { (short)0, (short)41 });
+	cout << player->getHP();
 }
 
 void Game::DrawEnemies()
@@ -92,4 +96,35 @@ void Game::EnemyMove()
 Player* Game::getPlayer()
 {
 	return player;
+}
+
+void Game::ScanArea()
+{
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		int left;
+		int right;
+		int up;
+		int down;
+		int checker = 0; //кастыль
+		enemies[i]->getPosition().y + 1 <= 39 ? down = enemies[i]->getPosition().y + 1 : down = enemies[i]->getPosition().y;
+		enemies[i]->getPosition().y - 1 >= 0 ? up = enemies[i]->getPosition().y - 1 : up = enemies[i]->getPosition().y;
+		enemies[i]->getPosition().x + 1 <= 39 ? right = enemies[i]->getPosition().x + 1 : right = enemies[i]->getPosition().x;
+		enemies[i]->getPosition().x - 1 >= 0 ? left = enemies[i]->getPosition().x - 1 : left = enemies[i]->getPosition().x;
+		for (int j = up; j <= down; j++)
+		{
+			for (int k = left; k <= right; k++)
+			{
+				if (player->getPosition().x == k && player->getPosition().y == j)
+				{
+					checker = 1; //кастыль
+					break;
+				}
+			}
+			if (checker == 1) //кастыль
+				break;
+		}
+		if (checker == 1)
+			enemies[i]->AttackCh(*player);
+	}
 }

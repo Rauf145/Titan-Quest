@@ -132,6 +132,7 @@ void main()
 		}
 		Sleep(100);
 		Game::get().EnemyMove();
+		Game::get().ScanArea();
 		//player.move(Direction(button));
 	}
 	//Game loop

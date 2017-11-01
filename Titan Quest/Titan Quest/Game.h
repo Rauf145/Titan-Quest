@@ -17,7 +17,7 @@ class Game
 		{
 			Damage dm;//	 Temperary
 			Position pos;//	 Temperary
-			dm.max = 20;//
+			dm.max = 10;//
 			dm.min = 5;//
 			pos = checkAndRand();
 			EnemyType = new Zombie(dm, pos, 100, 3);
@@ -33,5 +33,6 @@ public:
 	void DrawEnemies();
 	void EnemyMove();
 	Player* getPlayer();
+	void ScanArea();
 };
 

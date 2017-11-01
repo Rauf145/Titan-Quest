@@ -36,10 +36,10 @@ public:
 	//}
 
 	// Inherited via Character
-	void move(Direction dir) override;
+	void move(Direction dir);
 
 	// Inherited via Character
-	void AttackCh(Character & ch) override;
+	void AttackCh(Character & ch);
 	//void setName(string Name);
 };
 

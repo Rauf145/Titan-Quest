@@ -15,11 +15,19 @@ void Zombie::move(Direction dir)
 
 void Zombie::AttackCh(Character & ch)
 {
-	int randDamage = 0;
-	randDamage = rand() % (damage.max - damage.min) + damage.min;
-	if (ch.getHP() < randDamage)
-		randDamage = ch.getHP();
-	ch.setHP(ch.getHP() - randDamage);
+	if (cooldown == 0)
+	{
+		int randDamage = 0;
+		randDamage = rand() % (damage.max - damage.min) + damage.min;
+		if (ch.getHP() < randDamage)
+			randDamage = ch.getHP();
+		ch.setHP(ch.getHP() - randDamage);
+		cooldown = 40;
+	}
+	else
+	{
+		cooldown--;
+	}
 	//int left;
 	//int right;
 	//int up;
@@ -46,3 +54,31 @@ void Zombie::AttackCh(Character & ch)
 	//}
 	//state = attack;
 }
+
+//void Zombie::ScanArea()
+//{
+//	int left;
+//	int right;
+//	int up;
+//	int down;
+//	int checker = 0; //кастыль
+//	position.y + 1 <= 39 ? down = position.y + 1 : down = position.y;
+//	position.y - 1 >= 0 ? up = position.y - 1 : up = position.y;
+//	position.x + 1 <= 39 ? right = position.x + 1 : right = position.x;
+//	position.x - 1 >= 0 ? left = position.x - 1 : left = position.x;
+//	for (int j = up; j <= down; j++)
+//	{
+//		for (int k = left; k <= right; k++)
+//		{
+//			if (player->getPosition().x == k && player->getPosition().y == j)
+//			{
+//				checker = 1; //кастыль
+//				break;
+//			}
+//		}
+//		if (checker == 1) //кастыль
+//			break;
+//	}
+//	if (checker == 1)
+//		enemies[i]->AttackCh(*player);
+//}
