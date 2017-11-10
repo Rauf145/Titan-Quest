@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿#include <SFML\Graphics.hpp>
+#include <SFML\System.hpp>
+#include <iostream>
 #include <string>
 #include <vector>
 #include "Map.h"
@@ -119,20 +121,31 @@ void main()
 {
 	//Game initialization
 	srand(time(0));
-	Game::get().DrawField();
 	int button;
-	while (true)
+	Game::get();
+	while (Game::get().GetWindow().isOpen())
 	{
-		Game::get().DrawPlayer();
-		Game::get().DrawEnemies();
+		Game::get().DrawField();
+		sf::Event event;
+		while (Game::get().GetWindow().pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+			{
+				Game::get().GetWindow().close();
+			}
+		}
+		//Game::get().DrawPlayer();
+		//Game::get().DrawEnemies();
 		if (kbhit())
 		{
 			button = getch();
 			Game::get().getPlayer()->move(Direction(button));
 		}
-		Sleep(100);
-		Game::get().EnemyMove();
-		Game::get().ScanArea();
+		//Sleep(100);
+		Game::get().GetWindow().clear();
+		Game::get().GetWindow().display();
+		//Game::get().EnemyMove();
+		//Game::get().ScanArea();
 		//player.move(Direction(button));
 	}
 	//Game loop

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Textures">
+      <UniqueIdentifier>{cfcc3fa4-4a9a-47af-a727-f06bc7b183b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -95,5 +98,22 @@
     <ClInclude Include="Zombie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wall.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="aasd.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="grass.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="player.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

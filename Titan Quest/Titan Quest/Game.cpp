@@ -31,6 +31,11 @@ Game& Game::get()
 	return game;
 }
 
+sf::RenderWindow& Game::GetWindow()
+{
+	return window;
+}
+
 void Game::DrawField()
 {
 	for (int i = 0; i < Map::get().height; i++)
@@ -39,17 +44,22 @@ void Game::DrawField()
 		{
 			if (i == player->getPosition().y && j == player->getPosition().x)
 			{
-				cout << "@";
+				PlayerRect.setPosition(j * 20, i * 20);
+				window.draw(PlayerRect);
 			}
 			else if (Map::get().getCell(i, j) == Wall)
 			{
-				cout << char(219);
+				WallRect.setPosition(j * 20, i * 20);
+				window.draw(WallRect);
 			}
 			else
-				cout << " ";
+			{
+				EmptyRect.setPosition(j * 20, i * 20);
+				window.draw(EmptyRect);
+			}
 			//cout << Map::get().getCell(i, j);
 		}
-		cout << endl;
+		//cout << endl;
 	}
 }
 
